@@ -1,0 +1,36 @@
+
+This projects is used for Docker commands documentation
+
+## Docker documentation and download
+
+* link:https://helm.sh/[What is Helm?]
+* link:https://kubernetes.io/[What is kubernetes?]
+
+### Config
+
+## Helm 
+
+### *ls* -> lists all of the releases
+
+----
+helm ls
+----
+
+### *del* -> This command takes a release name, and then deletes the release from Kubernetes.
+It removes all of the resources associated with the last release of the chart.
+
+----
+helm del --purge <RELEASE-NAME>
+----
+  
+### *install* -> This command installs a chart archive.
+
+----
+helm install . --name <RELEASE-NAME> -f values-<ENV>.yaml 
+----
+  
+### *upgrade* -> This command upgrades a release to a specified version of a chart and/or updates chart values.
+
+----
+helm upgrade <RELEASE-NAME> . -f values-<ENV>.yaml 
+----
