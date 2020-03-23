@@ -34,3 +34,10 @@ helm install . --name <RELEASE-NAME> -f values-<ENV>.yaml
 ----
 helm upgrade <RELEASE-NAME> . -f values-<ENV>.yaml 
 ----
+
+## Kubectl
+
+### *exec* -> This command exec the pod commands, like the bash console, in Windows use PowerShell, GitBash is not working
+----
+kubectl exec -it <POD_ID> sh
+----
