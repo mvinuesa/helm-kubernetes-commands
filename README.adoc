@@ -8,7 +8,7 @@ This projects is used for Docker commands documentation
 
 ### Config
 
-## Helm 
+## Helm 2
 
 ### *ls* -> lists all of the releases
 
@@ -41,3 +41,15 @@ helm upgrade <RELEASE-NAME> . -f values-<ENV>.yaml
 ----
 kubectl exec -it <POD_ID> sh
 ----
+
+### *get cronjobs* -> This command get the cron jobs, in Windows use PowerShell, GitBash is not working
+----
+kubectl get cronjobs 
+----
+
+### *patch* -> This command  update a node or container, in Windows use PowerShell, GitBash is not working. In this case modify a cronjobs to suspend it.
+----
+kubectl patch cronjobs <JOB-NAME> -p '{"spec" : {"suspend" : true }}'
+----
+
+
