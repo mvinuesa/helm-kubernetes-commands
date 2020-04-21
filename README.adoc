@@ -47,9 +47,13 @@ kubectl exec -it <POD_ID> sh
 kubectl get cronjobs 
 ----
 
-### *patch* -> This command  update a node or container, in Windows use PowerShell, GitBash is not working. In this case modify a cronjobs to suspend it.
+### *patch* -> This command update a node or container, in Windows use PowerShell, GitBash is not working. In this case modify a cronjobs to suspend it.
 ----
 kubectl patch cronjobs <JOB-NAME> -p '{"spec" : {"suspend" : true }}'
 ----
 
+### *get deploy* -> This command get all the deploys in the cluster and iterate to get all the metadata.name
+----
+kubectl get deploy -o=jsonpath='{range .items[*]}{.metadata.name}
+----
 
